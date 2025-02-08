@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IAddress } from "../Interfaces/IAddress";
+import { IAddress } from "../interfaces/IAddress";
 import { baseAddressesAPI } from "../Urls/addressesApiUrl";
 
 export default function AddressDetail() {

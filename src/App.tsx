@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./styles/App.css";
 import axios from "axios";
 import AddressDetail from "./pages/AddressDetail";
-import { IAddress } from "./Interfaces/IAddress";
+import { IAddress } from "./interfaces/IAddress";
 import { baseAddressesAPI } from "./Urls/addressesApiUrl";
-import { AddressTable } from "./Components/AddressTable";
+import { AddressTable } from "./components/AddressTable/AddressTable";
 
 function App() {
   const [addresses, setAddresses] = useState<IAddress[]>([]);

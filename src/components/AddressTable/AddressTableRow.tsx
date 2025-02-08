@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
-import { IAddressTableProps } from "../Interfaces/IAddressTableProps";
-import { IAddress } from "../Interfaces/IAddress";
+import { IAddressTableProps } from "../../interfaces/IAddressTableProps";
+import { IAddress } from "../../interfaces/IAddress";
 
 interface IAddressTableRowProps extends IAddressTableProps {
   address: IAddress;

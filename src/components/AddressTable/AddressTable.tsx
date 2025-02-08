@@ -1,6 +1,6 @@
-import { IAddress } from "../Interfaces/IAddress";
+import { IAddress } from "../../interfaces/IAddress";
 import { AddressTableRow } from "./AddressTableRow";
-import { IAddressTableProps } from "../Interfaces/IAddressTableProps";
+import { IAddressTableProps } from "../../interfaces/IAddressTableProps";
 
 interface IProps extends IAddressTableProps {
   addresses: IAddress[];
