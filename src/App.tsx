@@ -6,22 +6,25 @@ import AddressDetail from "./pages/AddressDetail";
 import { IAddress } from "./interfaces/IAddress";
 import { baseAddressesAPI } from "./Urls/addressesApiUrl";
 import { AddressTable } from "./components/AddressTable/AddressTable";
+import { useFetchAddresses } from "./hooks/useFetchAddresses";
 
 function App() {
-  const [addresses, setAddresses] = useState<IAddress[]>([]);
+  const addresses = useFetchAddresses();
+  // console.log(addresses);
+  // const [addresses, setAddresses] = useState<IAddress[]>([]);
 
-  useEffect(() => {
-    axios
-      .get(baseAddressesAPI)
-      .then(function (response) {
-        const theA = response.data.addresses;
-        setAddresses(theA);
-        console.log(theA);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  }, []);
+  // useEffect(() => {
+  //   axios
+  //     .get(baseAddressesAPI)
+  //     .then(function (response) {
+  //       const theA = response.data.addresses;
+  //       setAddresses(theA);
+  //       console.log(theA);
+  //     })
+  //     .catch(function (error) {
+  //       console.log(error);
+  //     });
+  // }, []);
 
   const deleteAddress = (id: number) => {
     const isAddressConfirmedForDeletion = window.confirm(
@@ -30,9 +33,9 @@ function App() {
     if (isAddressConfirmedForDeletion) {
       axios
         .delete(`${baseAddressesAPI}/address/${id}`)
-        .then(() => {
-          setAddresses((prev) => prev.filter((address) => address.id !== id));
-        })
+        // .then(() => {
+        //   setAddresses((prev) => prev.filter((address) => address.id !== id));
+        // })
         .catch((error) => console.log(error));
     }
   };
