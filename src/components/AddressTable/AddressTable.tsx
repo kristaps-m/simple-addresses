@@ -8,7 +8,7 @@ interface IProps extends IAddressTableProps {
 
 export function AddressTable({ addresses, onDelete }: IProps) {
   return (
-    <table>
+    <table className="addressesTable">
       <thead>
         <tr>
           <th>Id</th>
@@ -19,7 +19,7 @@ export function AddressTable({ addresses, onDelete }: IProps) {
         </tr>
       </thead>
       <tbody>
-        {addresses.map((address) => (
+        {addresses?.map((address) => (
           <AddressTableRow
             key={address.id}
             address={address}

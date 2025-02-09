@@ -1,35 +1,33 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { IAddress } from "../interfaces/IAddress";
-import { baseAddressesAPI } from "../Urls/addressesApiUrl";
+import { useFetchOneAddress } from "../hooks/useFetchOneAddress";
 
 export default function AddressDetail() {
   const { addressId } = useParams();
-  const [address, setAddress] = useState<IAddress>();
-  useEffect(() => {
-    // Make a request for a user with a given ID
-    axios
-      .get(`${baseAddressesAPI}/address/${addressId}`)
-      .then(function (response) {
-        // handle success
-        const theA = response.data.address;
-        setAddress(theA);
-        console.log(theA);
-      })
-      .catch(function (error) {
-        // handle error
-        console.log(error);
-      });
-  }, [addressId]);
+  const { oneAddress, isOneAddressLoading } = useFetchOneAddress(addressId);
 
   return (
     <div style={{ marginLeft: "8rem" }}>
       <h2>Address Details</h2>
-      <p>Address ID: {addressId}</p>
-      <p>Address: {address?.address}</p>
-      <p>Country: {address?.country}</p>
-      <p>Zip: {address?.zip}</p>
+      <p>
+        <b>Address ID:</b> {addressId}
+      </p>
+      {isOneAddressLoading ? (
+        <h1>
+          <b>Loading......</b>
+        </h1>
+      ) : (
+        <>
+          <p>
+            <b>Address:</b> {oneAddress?.address}
+          </p>
+          <p>
+            <b>Country:</b> {oneAddress?.country}
+          </p>
+          <p>
+            <b>Zip:</b> {oneAddress?.zip}
+          </p>
+        </>
+      )}
     </div>
   );
 }

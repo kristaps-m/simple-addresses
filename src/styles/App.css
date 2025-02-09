@@ -37,22 +37,27 @@
   }
 }
 
-/* SIPLE Table css */
-table {
+/* SIMPLE Table css (src\components\AddressTable\AddressTable.tsx) */
+.addressesTable{
+  margin-left: 8rem;
+  margin-top: 4rem;
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 80%;
-  margin-left: 8rem;
-  margin-top: 4rem;
-}
 
-td,
-th {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-}
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+    :hover{
+      background-color: rgb(168, 211, 247);
+      font-style: italic;
+      font-size: large;
+      font-weight: bold;
+    }
+  }
 
-tr:nth-child(even) {
-  background-color: #dddddd;
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
 }

@@ -1,3 +1,17 @@
+### React/TypeScript application with the following functionality:
+
+- Display a list of addresses!
+
+<img src="readmePictures/homePage.png" width="500">
+
+- Show details for a selected address!
+
+<img src="readmePictures/addressDetails.png" width="500">
+
+- Allow user to delete an address!
+
+<img src="readmePictures/deleteConfirm.png" width="500">
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
