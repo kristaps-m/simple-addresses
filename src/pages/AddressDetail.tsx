@@ -8,9 +8,6 @@ export default function AddressDetail() {
   return (
     <div style={{ marginLeft: "8rem" }}>
       <h2>Address Details</h2>
-      <p>
-        <b>Address ID:</b> {addressId}
-      </p>
       {isOneAddressLoading ? (
         <h1>
           <b>Loading......</b>
